@@ -3,7 +3,7 @@ import { ChevronRight, Code, Layers, Zap } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden">
+    <div className="h-auto relative bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
@@ -36,15 +36,12 @@ const HeroSection = () => {
         </p>
         
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-6 py-3 bg-white text-indigo-900 font-medium rounded-lg flex items-center justify-center hover:bg-white/90 transition-all">
-            Get Started
-            <ChevronRight className="ml-2 h-4 w-4" />
-          </button>
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
           <button className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-lg hover:bg-white/20 transition-all">
             View Our Work
           </button>
-        </div>
+        </div> */}
         
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 w-full max-w-4xl">
