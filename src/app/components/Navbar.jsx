@@ -47,7 +47,7 @@ const Navbar = () => {
 
   const navClasses = scrolled 
     ? "fixed w-full bg-indigo-900/80 backdrop-blur-md shadow-lg transition-all duration-300 z-50" 
-    : "fixed w-full bg-transparent transition-all duration-300 z-50";
+    : "fixed w-full bg-indigo-900/80 transition-all duration-300 z-50";
 
   return (
     <nav className={navClasses}>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pt-4 pb-2 animate-fadeIn">
+          <div className="md:hidden pt-4 pb-2 animate-fadeIn ">
             <div className="flex flex-col space-y-3">
               <a href="/about" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>About</a>
               <a href="/service" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Services</a>
