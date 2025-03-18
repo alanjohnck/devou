@@ -1,7 +1,7 @@
 
 "use client"
 import React, { useState } from 'react';
-import { ChevronRight, MapPin, Mail, Phone, Twitter, Linkedin, Github, Zap, Instagram } from 'lucide-react';
+import { ChevronRight, MapPin, Mail, Phone,Whatsapp, Twitter, Linkedin, Github, Zap, Instagram } from 'lucide-react';
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -75,9 +75,7 @@ const ContactSection = () => {
               <a href="https://www.instagram.com/devou.in" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all">
                 <Instagram  className="h-5 w-5 text-white" />
               </a>
-              <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all">
-                <Linkedin className="h-5 w-5 text-white" />
-              </a>
+              
               <a href="https://github.com/devou-org" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all">
                 <Github className="h-5 w-5 text-white" />
               </a>
