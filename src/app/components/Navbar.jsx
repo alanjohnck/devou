@@ -55,15 +55,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-              <img src='./logo.png' className='w-14 h-14'></img>
+              <img src='./dlogo.png' className='w-24 h-18'></img>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/about" className="text-white hover:text-teal-300 transition-colors">About</a>
-            <a href="/service" className="text-white hover:text-teal-300 transition-colors">Services</a>
+            <a href="#about" className="text-white hover:text-teal-300 transition-colors">About</a>
+            <a href="#services" className="text-white hover:text-teal-300 transition-colors">Services</a>
             {/* <a href="#portfolio" className="text-white hover:text-teal-300 transition-colors">Portfolio</a> */}
-            <a href="/contact" className="text-white hover:text-teal-300 transition-colors">Contact</a>
+            <a href="#contact" className="text-white hover:text-teal-300 transition-colors">Contact</a>
           
           </div>
 
@@ -79,10 +79,10 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pt-4 pb-2 animate-fadeIn ">
             <div className="flex flex-col space-y-3">
-              <a href="/about" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>About</a>
-              <a href="/service" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Services</a>
+              <a href="#about" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>About</a>
+              <a href="#services" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Services</a>
               {/* <a href="#portfolio" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Portfolio</a> */}
-              <a href="/contact" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Contact</a>
+              <a href="#contact" className="text-white py-2 hover:text-teal-300 transition-colors" onClick={() => setIsOpen(false)}>Contact</a>
               
             </div>
           </div>
