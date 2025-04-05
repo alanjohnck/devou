@@ -42,15 +42,16 @@ export default function RootLayout({ children }) {
         
         <link
           rel="icon"
-          href="./favicon.ico"
+          href="/favicon.ico"
           type="image/x-icon"
         />
-        </head>
-        <meta property="og:title" content="Devou - Design Develop Deploy" />
+          <meta property="og:title" content="Devou - Design Develop Deploy" />
         <meta property="og:description" content="We offer cutting-edge web development, design, and digital solutions." />
         <meta property="og:url" content="https://www.devou.in/" />
         <meta property="og:image" content="https://www.devou.in/favicon.ico" />
 
+        </head>
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
