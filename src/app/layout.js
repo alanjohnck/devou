@@ -39,19 +39,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Devou - Design Develop Deploy</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Devou Team" />
-        <meta
-          name="keywords"
-          content="Devou, web development, digital solutions, web design, software development, UI/UX design, custom websites, digital transformation, technology solutions, modern web applications, web solutions"
-        />
+        
         <link
           rel="icon"
           href="./favicon.ico"
           type="image/x-icon"
         />
         </head>
+        <meta property="og:title" content="Devou - Design Develop Deploy" />
+        <meta property="og:description" content="We offer cutting-edge web development, design, and digital solutions." />
+        <meta property="og:url" content="https://www.devou.in/" />
+        <meta property="og:image" content="https://www.devou.in/favicon.ico" />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
