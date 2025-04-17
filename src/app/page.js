@@ -10,7 +10,7 @@ export default function Home() {
     <div className="h-auto relative">
       {/* Modern Floating Let's Talk Button */}
       <a
-  href="https://wa.me/8089640469?text=Hello"
+  href="https://wa.me/+918089640469?text=Hello"
   className="fixed bottom-6 right-6 bg-indigo-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center font-medium z-50 group"
 >
   <span>Let&apos;s Talk</span> {/* Replaced ' with &apos; */}
