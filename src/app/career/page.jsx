@@ -67,7 +67,7 @@ const CareerPage = () => {
                 <strong>Type:</strong> {job.type}
               </p>
               <a
-                href="mailto:careers@devou.in"
+                href="mailto:devou.in@gmail.com"
                 className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Apply Now
