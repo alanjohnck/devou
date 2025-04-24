@@ -6,7 +6,7 @@ const CareerPage = () => {
     {
       title: "Frontend Developer",
       location: "Remote",
-      type: "Full-Time",
+      type: "Internship",
       description:
         "We are looking for a skilled Frontend Developer with experience in React and Tailwind CSS to build responsive and user-friendly interfaces.",
       requirements: [
@@ -19,7 +19,7 @@ const CareerPage = () => {
     {
       title: "Backend Developer",
       location: "Remote",
-      type: "Full-Time",
+      type: "Internship",
       description:
         "Join our team as a Backend Developer to build scalable and secure APIs using Node.js and GraphQL.",
       requirements: [
