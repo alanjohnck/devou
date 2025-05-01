@@ -4,19 +4,6 @@ import React from "react";
 const CareerPage = () => {
   const jobOpenings = [
     {
-      title: "Frontend Developer",
-      location: "Remote",
-      type: "Internship",
-      description:
-        "We are looking for a skilled Frontend Developer with experience in React and Tailwind CSS to build responsive and user-friendly interfaces.",
-      requirements: [
-        "Proficiency in React.js and JavaScript.",
-        "Experience with Tailwind CSS.",
-        "Strong understanding of responsive design.",
-        "Good communication and teamwork skills.",
-      ],
-    },
-    {
       title: "Backend Developer",
       location: "Remote",
       type: "Internship",
@@ -27,6 +14,21 @@ const CareerPage = () => {
         "Experience with GraphQL and REST APIs.",
         "Knowledge of database systems like MongoDB or PostgreSQL.",
         "Ability to write clean and maintainable code.",
+      ],
+    },
+    {
+      title: "WordPress Developer",
+      location: "Remote",
+      type: "Internship",
+      description:
+        "We are seeking a talented WordPress Developer to create and maintain custom WordPress themes and plugins, ensuring high performance and availability.",
+      requirements: [
+        "Proficiency in WordPress development, including custom themes and plugins.",
+        "Strong knowledge of PHP, HTML, CSS, and JavaScript.",
+        "Experience with WordPress APIs and hooks.",
+        "Understanding of SEO best practices.",
+        "Ability to troubleshoot and resolve website issues.",
+        "Good communication and problem-solving skills.",
       ],
     },
   ];
@@ -67,7 +69,7 @@ const CareerPage = () => {
                 <strong>Type:</strong> {job.type}
               </p>
               <a
-                href="mailto:devou.in@gmail.com"
+                  href="mailto:devou.in@gmail.com?subject=Application for the Interns"
                 className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Apply Now
