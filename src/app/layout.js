@@ -117,8 +117,14 @@ export default function RootLayout({ children }) {
       <body
         className="overflow-x-hidden "
       >
-       <Navbar />
-        {children}
+     <div className="flex flex-col items-center justify-center min-h-screen text-white text-center px-4">
+      <div className="text-6xl animate-spin mb-4 text-violet-800">⚙️</div>
+      <h1 className="text-4xl md:text-5xl font-bold text-violet-500">Under Maintenance</h1>
+      <p className="mt-4 text-lg text-gray-300 max-w-xl">
+        We're currently performing scheduled maintenance. We'll be back shortly. Thank you for your patience!
+      </p>
+    </div>
+       
       <ContactSection />
         <footer className="bg-gray-800 text-white py-6">
           <div className="container mx-auto text-center">
