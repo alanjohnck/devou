@@ -42,19 +42,25 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="#about"
+              href="/"
               className="text-white hover:text-teal-300 transition-colors"
             >
-              About
+              Home
             </a>
             <a
-              href="#services"
+              href="/service"
               className="text-white hover:text-teal-300 transition-colors"
             >
               Services
             </a>
             <a
-              href="#career"
+              href="/pricing"
+              className="text-white hover:text-teal-300 transition-colors"
+            >
+              Pricing
+            </a>
+            <a
+              href="/career"
               className="text-white hover:text-teal-300 transition-colors"
             >
               Career{" "}
@@ -62,12 +68,7 @@ const Navbar = () => {
                 {openPositions} 
               </span>
             </a>
-            <a
-              href="#faq"
-              className="text-white hover:text-teal-300 transition-colors"
-            >
-              FAQ
-            </a>
+        
             <a
               href="#contact"
               className="text-white hover:text-teal-300 transition-colors"
@@ -104,6 +105,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Services
+              </a>
+              <a
+                href="/pricing"
+                className="text-white py-2 hover:text-teal-300 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Pricing
               </a>
               <a
                 href="#career"
