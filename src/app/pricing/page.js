@@ -254,7 +254,7 @@ export default function PricingPage() {
                 <>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h3 className="text-lg font-semibold text-slate-800 mb-2">
-                      What's included in the hosting?
+                      What&apos;s included in the hosting?
                     </h3>
                     <p className="text-slate-600">
                       Our hosting includes fast servers, SSL certificate, security monitoring, and regular backups to ensure your website stays online and secure.
@@ -349,7 +349,7 @@ export default function PricingPage() {
               Contact Us
             </Link>
             <a
-              href={`https://wa.me/+918089640469?text=Hello, I'm interested in your ${activeTab === "web" ? "web" : "app"} development services.`}
+              href={`https://wa.me/+918089640469?text=Hello, I&apos;m interested in your ${activeTab === "web" ? "web" : "app"} development services.`}
               className="border-2 border-white text-white hover:bg-white/10 py-3 px-8 rounded-lg font-semibold transition-colors"
             >
               Chat on WhatsApp
