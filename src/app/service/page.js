@@ -472,7 +472,7 @@ const ServicesSection = () => {
           <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
             <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Let's discuss your requirements and build a solution that perfectly meets your business needs.
+              Let&apos;s discuss your requirements and build a solution that perfectly meets your business needs.
             </p>
             <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all">
               Schedule a Consultation
