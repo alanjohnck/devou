@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
       <div className="text-6xl animate-spin mb-4 text-violet-800">⚙️</div>
       <h1 className="text-4xl md:text-5xl font-bold text-violet-500">Under Maintenance</h1>
       <p className="mt-4 text-lg text-gray-300 max-w-xl">
-        We're currently performing scheduled maintenance. We'll be back shortly. Thank you for your patience!
+        We&apos;re currently performing scheduled maintenance. We&apos;ll be back shortly. Thank you for your patience!
       </p>
     </div>
        
