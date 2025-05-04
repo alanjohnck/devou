@@ -241,7 +241,122 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">
+              Frequently Asked Questions
+            </h2>
+            
+            <div className="space-y-6">
+              {activeTab === "web" ? (
+                <>
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      What's included in the hosting?
+                    </h3>
+                    <p className="text-slate-600">
+                      Our hosting includes fast servers, SSL certificate, security monitoring, and regular backups to ensure your website stays online and secure.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      What is the 30-day after service?
+                    </h3>
+                    <p className="text-slate-600">
+                      After your website goes live, we provide 30 days of support for minor adjustments, bug fixes, and content updates at no additional cost.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      Can I upgrade my plan later?
+                    </h3>
+                    <p className="text-slate-600">
+                      Yes, you can upgrade to a higher plan at any time. We'll simply charge the difference between your current plan and the new one.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      Do you offer custom solutions beyond these packages?
+                    </h3>
+                    <p className="text-slate-600">
+                      Absolutely! If you have specific requirements that aren't covered in our standard packages, we offer custom solutions tailored to your needs. Contact us for a personalized quote.
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      What platforms do you develop for?
+                    </h3>
+                    <p className="text-slate-600">
+                      We develop native applications for Android and iOS platforms, as well as cross-platform solutions depending on your requirements and budget.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      What does the support period include?
+                    </h3>
+                    <p className="text-slate-600">
+                      Our support includes bug fixes, minor updates, technical assistance, and compatibility updates for new OS versions released during the support period.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      How long does it take to develop an app?
+                    </h3>
+                    <p className="text-slate-600">
+                      Development timelines vary based on complexity, but typically range from 3-4 months for basic apps to 6-9 months for more complex enterprise solutions.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                      Do you offer custom app development beyond these packages?
+                    </h3>
+                    <p className="text-slate-600">
+                      Absolutely! If you have specific requirements that aren't covered in our standard packages, we offer custom solutions tailored to your needs. Contact us for a personalized quote.
+                    </p>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Call to Action */}
+      <section className="py-16 bg-indigo-900 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to get started?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-indigo-100">
+            Have questions about which plan is right for you? Our team is here to help you make the right choice for your business.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="bg-white text-indigo-900 hover:bg-indigo-100 py-3 px-8 rounded-lg font-semibold transition-colors"
+            >
+              Contact Us
+            </Link>
+            <a
+              href={`https://wa.me/+918089640469?text=Hello, I'm interested in your ${activeTab === "web" ? "web" : "app"} development services.`}
+              className="border-2 border-white text-white hover:bg-white/10 py-3 px-8 rounded-lg font-semibold transition-colors"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

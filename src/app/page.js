@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import HeroSection from "./Hero/page";
 import Navbar from "./components/Navbar";
 import ServicesSection from "./service/page";
@@ -41,9 +42,11 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-indigo-100 rounded-full z-0"></div>
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden">
-                <img 
+                <Image 
                   src="/devoulogo.png" 
                   alt="Devou" 
+                  width={500}
+                  height={300}
                   className="w-full h-auto transform scale-95 hover:scale-100 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/70 to-transparent flex items-end p-8">
@@ -95,7 +98,7 @@ export default function Home() {
               Why Website Development Is <span className="text-indigo-600">Essential</span>
             </h2>
             <p className="text-slate-600 max-w-3xl mx-auto">
-              In today's digital world, your website is often the first touchpoint with potential customers. Make it count.
+              In today&apos;s digital world, your website is often the first touchpoint with potential customers. Make it count.
             </p>
           </div>
 
@@ -161,7 +164,7 @@ export default function Home() {
                   Credibility & Trust
                 </h3>
                 <p className="text-slate-600">
-                  In today's digital age, not having a website can harm your credibility. A professional web presence builds trust with potential customers.
+                  In today&apos;s digital age, not having a website can harm your credibility. A professional web presence builds trust with potential customers.
                 </p>
                 <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
@@ -267,7 +270,7 @@ export default function Home() {
               <div className="absolute -top-10 -left-10 w-20 h-20 bg-teal-500 rounded-full opacity-20"></div>
               <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-indigo-600 rounded-full opacity-20"></div>
               <div className="bg-white p-4 rounded-xl shadow-2xl transform rotate-3 relative z-10">
-                <img src="/devoulogo.png" alt="MVP Development" className="w-full h-auto rounded-lg" />
+                <Image src="/devoulogo.png" alt="MVP Development" width={500} height={300} className="w-full h-auto rounded-lg" />
               </div>
               <div className="bg-teal-500 p-3 rounded-lg shadow-xl absolute -bottom-5 -left-5 transform -rotate-6 z-0">
                 <div className="bg-white p-4 rounded">

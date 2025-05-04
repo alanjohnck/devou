@@ -155,7 +155,7 @@ const ServicesSection = () => {
     {
       icon: <RefreshCw className="h-6 w-6 text-white" />,
       title: "6. Maintenance & Support",
-      description: "Our relationship doesn't end at launch. We provide ongoing maintenance, performance monitoring, and support to ensure your application continues to evolve with your business needs.",
+      description: "Our relationship doesn&apos;t end at launch. We provide ongoing maintenance, performance monitoring, and support to ensure your application continues to evolve with your business needs.",
       steps: [
         "Regular security updates and patches",
         "Performance monitoring and optimization",
