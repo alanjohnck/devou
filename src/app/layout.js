@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import ContactSection from "./contact/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -118,7 +119,13 @@ export default function RootLayout({ children }) {
       >
        <Navbar />
         {children}
-      
+      <ContactSection />
+        <footer className="bg-gray-800 text-white py-6">
+          <div className="container mx-auto text-center">
+            <p>&copy; {new Date().getFullYear()} Devou. All rights reserved.</p>
+            <p className="text-sm">Designed and Developed by Devou Team</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
