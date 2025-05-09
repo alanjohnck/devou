@@ -95,7 +95,7 @@ const PortfolioSection = () => {
                 animate={{ x: "-100%" }}
                 transition={{
             ease: "linear",
-            duration: 10,
+            duration: 40,
             repeat: Infinity,
             repeatType: "loop"
                 }}
