@@ -5,6 +5,7 @@ import ServicesSection from "./service/page";
 import ContactSection from "./contact/page";
 import FAQPage from "./faq/page";
 import CareerPage from "./career/page";
+import PortfolioSection from "./portfolio/page";
 export default function Home() {
   return (
     <div className="h-auto relative">
@@ -31,12 +32,12 @@ export default function Home() {
 </a>
 
 
-      <Navbar />
+      <Navbar />      
       <HeroSection />
       <AboutSection />
+      <PortfolioSection />
       <ServicesSection />
       <FAQPage />
-      {/* <PortfolioSection /> */}
       <CareerPage />
       <ContactSection />
     </div>

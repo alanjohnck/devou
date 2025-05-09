@@ -11,7 +11,9 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
+    "framer-motion": "^12.10.5",
     "lucide-react": "^0.482.0",
+    "motion": "^12.10.5",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
