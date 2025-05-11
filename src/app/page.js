@@ -35,7 +35,7 @@ export default function Home() {
       <Navbar />      
       <HeroSection />
       <AboutSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       <ServicesSection />
       <FAQPage />
       <CareerPage />
