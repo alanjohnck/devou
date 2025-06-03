@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../admin/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import CustomCursor from "../../components/customCursor";
+import CustomCursor from "../../components/customCursorComponent";
 
 const gridLayout = [
   {

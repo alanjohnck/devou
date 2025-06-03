@@ -1,7 +1,7 @@
 "use client"
 
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
+import Footer from "../components/footerCompononet";
+import Navbar from "../components/navbarComponent";
 import PortfolioHeroSection from "./Hero/page";
 import ProjectSection from "./Projects/page";
 

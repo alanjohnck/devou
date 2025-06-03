@@ -5,9 +5,9 @@ import FAQPage from "./faq/page";
 import AboutSection from "./about/page";
 import ShowCase from "./showcase/page";
 import PrdGeneratorSection from "./prdGenerator/page";
-import Footer from "./components/footer";
+import Footer from "./components/footerCompononet";
 import Services from "./service/page";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbarComponent";
 
 export default function Home() {
   return (

@@ -7,8 +7,8 @@ import Link from "next/link";
 import { db } from "../admin/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Navbar from "../components/navbarComponent";
+import Footer from "../components/footerCompononet";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
