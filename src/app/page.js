@@ -20,10 +20,10 @@ export default function Home() {
 
       <AboutSection />
       <Services />
-            <PrdGeneratorSection />
+      <PrdGeneratorSection />
 
-              <FAQPage />
-              <ContactSection />
+      <FAQPage />
+      <ContactSection />
 
       <Footer />
         {/* 
