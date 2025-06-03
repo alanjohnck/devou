@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../admin/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const CareerPage = () => {
   const [jobOpenings, setJobOpenings] = useState([]);

@@ -1,10 +1,7 @@
 import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import ContactSection from "./contact/page";
-import Home from "./page";
+
 import { Krona_One, Syne } from 'next/font/google';
-import Footer from "./components/Footer";
 const kronaOne = Krona_One({ subsets: ['latin'], weight: '400' });
 const syne = Syne({ subsets: ['latin'], weight: ['400', '700'] });
 const roboto = Roboto({subsets:['latin'],weight:['400','700']});

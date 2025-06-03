@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Spinner from "./Spinner"
+import Spinner from "./spinner"
 const LoadingProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
