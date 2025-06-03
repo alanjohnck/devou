@@ -40,16 +40,29 @@ const ShowCase = () => {
     }
   ];
 
+  // Create transforms for each card individually
+  const card1Opacity = useTransform(scrollYProgress, cardData[0].opacityRange, [0, 1]);
+  const card1Scale = useTransform(scrollYProgress, cardData[0].scaleRange, [0.8, 1]);
+  const card2Opacity = useTransform(scrollYProgress, cardData[1].opacityRange, [0, 1]);
+  const card2Scale = useTransform(scrollYProgress, cardData[1].scaleRange, [0.8, 1]);
+  const card3Opacity = useTransform(scrollYProgress, cardData[2].opacityRange, [0, 1]);
+  const card3Scale = useTransform(scrollYProgress, cardData[2].scaleRange, [0.8, 1]);
+
+  const cardTransforms = [
+    { opacity: card1Opacity, scale: card1Scale },
+    { opacity: card2Opacity, scale: card2Scale },
+    { opacity: card3Opacity, scale: card3Scale }
+  ];
+
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-[150vh] w-screen justify-center"
+      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-[150vh] w-screen justify-center gap-5 p-4"
     >
       <h1 className="text-6xl md:hidden font-bold p-4 text-black text-center">We Offer</h1>
       <br />
       {cardData.map((card, index) => {
-        const opacity = useTransform(scrollYProgress, card.opacityRange, [0, 1]);
-        const scale = useTransform(scrollYProgress, card.scaleRange, [0.8, 1]);
+        const { opacity, scale } = cardTransforms[index];
 
         return (
           <motion.div

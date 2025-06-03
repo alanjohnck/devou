@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
 
       <HeroSection />
-     <div style={{ backgroundImage:'url("./bg.png")' , backgroundPosition: 'center -40vh', }} className="w-screen h-fit absolute z-30 flex  bg-cover bg-no-repeat flex-col overflow-x-hidden">
+     <div style={{ backgroundImage:'url("./bg.png")' , backgroundPosition: 'center -140vh', }} className="w-screen h-fit absolute z-30 flex  bg-cover bg-no-repeat flex-col overflow-x-hidden">
       <ShowCase />
 
       <AboutSection />

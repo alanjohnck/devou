@@ -28,7 +28,7 @@ const Blog = () => {
      
     <Navbar />
     <div style={{backgroundImage:'url("./herobg.png")'}} className="min-h-[200vh] flex flex-col items-center justify-center bg-white text-black p-8 bg-no-repeat bg-cover">
-      <div className="w-3/4 flex py-8">
+      <div className="w-3/4 flex py-8 px-2">
           <h1 className="text-6xl font-bold" >Blogs</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-8">
