@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion"
+import {ChevronUp,ChevronDown} from "lucide-react"
 const FAQPage = () => {
   const faqs = [
     {
@@ -25,50 +26,43 @@ const FAQPage = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"], // 0 when top hits, 1 when bottom hits top
+   });
+  const rotate = useTransform(scrollYProgress,[0,.5],[20,0])
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Have questions? We’ve got answers. If you don’t find what you’re
-            looking for, feel free to contact us.
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="p-6 bg-slate-100 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-            >
+    <section ref={sectionRef}   style={{ perspective: 1000 }} className="w-screen h-[80vh]  text-black  ">
+      <div className="max-w-6xl mx-auto flex flex-col justify-center">
+        <h1 className="text-5xl font-bold mb-8 text-center">FAQs</h1>
+        <motion.div   className="flex flex-col gap-4 p-4">
+          {faqs.map(({question,answer}, index) => (
+            <motion.div key={index} className="bg-[#002b3d] p-2 md:p-4 text-white rounded-xl overflow-hidden gap-6">
               <button
-                className="w-full text-left flex justify-between items-center"
-                onClick={() => toggleFAQ(index)}
+                className="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+                onClick={() => toggle(index)}
               >
-                <h3 className="text-lg font-semibold text-slate-800">
-                  {faq.question}
-                </h3>
-                <span className="text-indigo-600">
-                  {activeIndex === index ? "-" : "+"}
-                </span>
+                {question}
+                <span className="text-xl transition-opacity duration-150">{openIndex === index ? <ChevronUp /> : <ChevronDown />}</span>
               </button>
-              {activeIndex === index && (
-                <p className="mt-4 text-slate-600">{faq.answer}</p>
+              {openIndex === index && (
+                <div className="px-6 pb-4 text-sm">
+                 {answer}
+                </div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
+
   );
 };
 

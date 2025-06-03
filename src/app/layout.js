@@ -1,13 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import ContactSection from "./contact/page";
+import Home from "./page";
+import { Krona_One, Syne } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
+const kronaOne = Krona_One({ subsets: ['latin'], weight: '400' });
+const syne = Syne({ subsets: ['latin'], weight: ['400', '700'] });
+const roboto = Roboto({subsets:['latin'],weight:['400','700']});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -103,11 +104,11 @@ export default function RootLayout({ children }) {
           type="image/x-icon"
         />
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-          <meta property="og:title" content="Devou - Design Develop Deploy" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta property="og:title" content="Devou - Design Develop Deploy" />
         <meta property="og:description" content="We offer cutting-edge web development, design, and digital solutions." />
         <meta property="og:url" content="https://www.devou.in/" />
         <meta property="og:image" content="https://www.devou.in/favicon.ico" />
@@ -115,23 +116,8 @@ export default function RootLayout({ children }) {
         </head>
       
       <body
-        className="overflow-x-hidden "
-      >
-     <div className="flex flex-col items-center justify-center min-h-screen text-white text-center px-4">
-      <div className="text-6xl animate-spin mb-4 text-violet-800">⚙️</div>
-      <h1 className="text-4xl md:text-5xl font-bold text-violet-500">Under Maintenance</h1>
-      <p className="mt-4 text-lg text-gray-300 max-w-xl">
-        We&apos;re currently performing scheduled maintenance. We&apos;ll be back shortly. Thank you for your patience!
-      </p>
-    </div>
-       
-      <ContactSection />
-        <footer className="bg-gray-800 text-white py-6">
-          <div className="container mx-auto text-center">
-            <p>&copy; {new Date().getFullYear()} Devou. All rights reserved.</p>
-            <p className="text-sm">Designed and Developed by Devou Team</p>
-          </div>
-        </footer>
+        className={`${syne.className} overflow-x-hidden`}>
+       {children}
       </body>
     </html>
   );

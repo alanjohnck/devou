@@ -24,3 +24,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* underline-hover.css */
+.underline-hover {
+  @apply relative inline-block transition-colors;
+}
+
+.underline-hover::before {
+  content: '';
+  @apply absolute left-0 bottom-0 h-[2px] w-full bg-white scale-x-0 origin-left transition-transform duration-300;
+}
+
+.underline-hover:hover::before {
+  @apply scale-x-100;
+}
+/* Hide native cursor only on targets */
+.cursor-target {
+  cursor: none;
+}
+
+/* Custom black circle cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, opacity 0.2s ease;
+  opacity: 0;
+  z-index: 9999;
+}

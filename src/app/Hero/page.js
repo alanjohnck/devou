@@ -1,76 +1,73 @@
-import React from 'react';
-import { ChevronRight, Code, Layers, Zap } from 'lucide-react';
+"use client";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1.4]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["4rem", "0rem"]);
+  const circleScale = useTransform(scrollYProgress, [0.45, 0.55, 1, 2], [1, 20, 15, 0]);
+  const circleOpacity = useTransform(scrollYProgress, [0.45, 0.5, 0.9, 1], [0, 1, 1, 1]);
+  const circleBorderRadius = useTransform(scrollYProgress, [0.45, 0.55], ["60%", "0%"]);
+
   return (
-    <div className="h-auto relative bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div className="absolute top-40 right-40 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      </div>
-      
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-grid-white/[0.05] bg-grid-white/[0.05]"></div>
-      
-      {/* Content Container */}
-      <div className="relative container mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-white mb-6">
-          <span className="flex h-2 w-2 rounded-full bg-teal-400 mr-2"></span>
-          Innovative App & Web Development
+    <section
+      ref={sectionRef}
+      className="h-[200vh] w-full bg-white flex items-start justify-center relative"
+    >
+      <motion.div
+        style={{
+          scale,
+          borderRadius,
+          width: "100vw",
+          height: "100vh",
+        }}
+        className="sticky top-0 z-10 overflow-hidden"
+      >
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover rounded-[4rem]"
+        >
+          <source src="portfolio.mp4" type="video/mp4" />
+        </video>
+
+        {/* Text content */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white font-bold px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
+            Transform your ideas <br />
+            into <br />
+            Digital Reality
+          </h1>
+          <br />
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-3xl mx-auto">
+            We build scalable, user-centered applications that leverage
+            cutting-edge technology to solve complex business challenges.
+          </p>
         </div>
-        
-        {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-          <span className="block">Transform Your Ideas Into</span>
-          <span className="bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
-            Digital Excellence
-          </span>
-        </h1>
-        
-        {/* Subheading */}
-        <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10">
-          We build scalable, user-centered applications that leverage cutting-edge technology to solve complex business challenges.
-        </p>
-        
-        {/* CTA Buttons */}
-        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          
-          <button className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-lg hover:bg-white/20 transition-all">
-            View Our Work
-          </button>
-        </div> */}
-        
-        {/* Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 w-full max-w-4xl">
-          <div className="flex flex-col items-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-teal-400/20 rounded-lg mb-4">
-              <Zap className="h-6 w-6 text-teal-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Cutting-Edge Tech</h3>
-            <p className="text-white/70 text-center">Leveraging the latest frameworks and technologies for optimal performance.</p>
-          </div>
-          
-          <div className="flex flex-col items-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-purple-400/20 rounded-lg mb-4">
-              <Layers className="h-6 w-6 text-purple-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Seamless UX</h3>
-            <p className="text-white/70 text-center">Creating intuitive interfaces that delight and engage your users.</p>
-          </div>
-          
-          <div className="flex flex-col items-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-blue-400/20 rounded-lg mb-4">
-              <Code className="h-6 w-6 text-blue-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Scalable Solutions</h3>
-            <p className="text-white/70 text-center">Building systems that grow with your business needs and user base.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      </motion.div>
+
+      {/* Expanding Circle */}
+      <motion.div
+        style={{
+          scale: circleScale,
+          opacity: circleOpacity,
+          borderRadius: circleBorderRadius,
+          backgroundImage: 'url("/herobg.png")',
+         backgroundPosition: 'center 70vh',
+        }}
+        className="w-30 h-30 absolute bottom-8 left-1/2 -translate-x-1/2 z-20  rounded-full "
+      />
+    </section>
   );
 };
 
