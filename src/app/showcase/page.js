@@ -57,7 +57,7 @@ const ShowCase = () => {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-[150vh] w-screen justify-center gap-5 p-4"
+      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-fit md:h-[150vh] w-screen justify-center gap-5 p-4"
     >
       <h1 className="text-6xl md:hidden font-bold p-4 text-black text-center">We Offer</h1>
       <br />
@@ -74,7 +74,7 @@ const ShowCase = () => {
             <div className="text-center flex">
               <div className={`${index === 0 ? 'md:text-xl' : 'text-xl'} ${card.icon ? 'flex flex-col items-center justify-center gap-5' : ''}`}>
                 {card.icon && <card.icon className="w-20 h-20" />}
-                <h1 className={`${index === 0 ? 'text-3xl md:text-6xl' : 'text-6xl'}`}>
+                <h1 className={`${index === 0 ? 'text-3xl md:text-6xl' : 'text-3xl'}`}>
                   {card.title}
                 </h1>
                 <p>{card.description}</p>

@@ -37,7 +37,7 @@ const PortfolioHeroSection = () => {
           Your browser does not support the video tag.
         </video>
 
-        <h1 className="text-4xl md:text-8xl font-bold text-white z-10">Portfolio</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white z-10">Portfolio</h1>
       </motion.div>
     </section>
   );

@@ -64,7 +64,7 @@ const HeroSection = () => {
           borderRadius: circleBorderRadius,
           backgroundImage: 'url("/bg.png")',
         }}
-        className="w-30 h-30 absolute bottom-8 left-1/2 -translate-x-1/2 z-20  rounded-full "
+        className="w-30 h-30 absolute bottom-8 left-1/2 -translate-x-1/2 z-20  rounded-full hidden sm:block "
       />
     </section>
   );
