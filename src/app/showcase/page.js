@@ -72,9 +72,9 @@ const ShowCase = () => {
             className={`flex rounded-2xl p-8 ${card.gridClass} bg-[#122933] text-white font-bold scale-x-75 md:rounded-4xl shadow-2xl border border-white/20 backdrop-blur-sm ${index === 0 ? 'sticky top-0' : ''}`}
           >
             <div className="text-center flex">
-              <div className={`${index === 0 ? 'md:text-xl' : 'text-xl'} ${card.icon ? 'flex flex-col items-center justify-center gap-5' : ''}`}>
+              <div className={` 'md:text-xl' : 'text-xl'} ${card.icon ? 'flex flex-col items-center justify-center gap-5' : ''}`}>
                 {card.icon && <card.icon className="w-20 h-20" />}
-                <h1 className={`${index === 0 ? 'text-3xl md:text-6xl' : 'text-3xl'}`}>
+                <h1 className="text-4xl md:text-6xl">
                   {card.title}
                 </h1>
                 <p>{card.description}</p>

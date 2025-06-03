@@ -26,7 +26,7 @@ const services = [
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-
+  
   const handleClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
