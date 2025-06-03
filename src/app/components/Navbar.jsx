@@ -36,7 +36,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const navClasses = `fixed w-full ${
-    scrolled ? "bg-white/50 " : "bg-white"
+    scrolled ? "bg-white/20 " : "bg-transparent"
   } text-black transition-all duration-300 z-50 transform ${
     visible ? "translate-y-0" : "-translate-y-full"
   }`;

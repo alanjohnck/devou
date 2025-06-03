@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../admin/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import CustomCursor from "@/app/components/customCursor";
+import CustomCursor from "@/app/components/CustomCursor";
 
 const gridLayout = [
   {
@@ -55,7 +55,7 @@ const ProjectSection = () => {
 
   return (
     <div className="h-[150vh] w-screen bg-[#114959] flex items-center justify-center">
-      <div className="grid grid-cols-4 grid-rows-5 gap-4 h-[80vh] w-[80vw] relative">
+      <div className="flex flex-col md:grid grid-cols-4 grid-rows-5 gap-4 h-[80vh] w-[80vw] relative">
         <CustomCursor />
         {projects.map((item, idx) => (
           <div

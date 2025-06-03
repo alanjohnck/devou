@@ -11,8 +11,8 @@ const PortfolioHeroSection = () => {
     offset: ['start start', 'end start'],
   });
 
-   const borderRadius = useTransform(scrollYProgress, [0, 1], [550, 0]);
-   const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1.2]);
+   const borderRadius = useTransform(scrollYProgress, [0, 1], [50, 0]);
+   const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1.2]);
  
   return (
     <section
@@ -37,7 +37,7 @@ const PortfolioHeroSection = () => {
           Your browser does not support the video tag.
         </video>
 
-        <h1 className="text-9xl font-bold text-white z-10">Portfolio</h1>
+        <h1 className="text-4xl md:text-8xl font-bold text-white z-10">Portfolio</h1>
       </motion.div>
     </section>
   );

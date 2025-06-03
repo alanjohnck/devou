@@ -1,7 +1,7 @@
 "use client"
 import { useScroll, useTransform, motion } from "framer-motion"
-import { useRef } from "react"
-import { Database,Sparkles,AppWindow } from "lucide-react"
+import React, { useRef } from "react"
+import { Database, Sparkles, AppWindow } from "lucide-react"
 
 const ShowCase = () => {
   const sectionRef = useRef(null);
@@ -43,11 +43,10 @@ const ShowCase = () => {
   return (
     <div
       ref={sectionRef}
-      
-      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-[150vh] w-screen justify-center gap-5 p-4"
+      className="flex flex-col md:grid grid-cols-3 grid-rows-4 h-[150vh] w-screen justify-center"
     >
-       <h1 className="text-6xl md:hidden font-bold p-4 text-black text-center">We Offer</h1>
-       <br />
+      <h1 className="text-6xl md:hidden font-bold p-4 text-black text-center">We Offer</h1>
+      <br />
       {cardData.map((card, index) => {
         const opacity = useTransform(scrollYProgress, card.opacityRange, [0, 1]);
         const scale = useTransform(scrollYProgress, card.scaleRange, [0.8, 1]);
@@ -57,10 +56,10 @@ const ShowCase = () => {
             key={index}
             style={{ opacity, scale }}
             transition={card.transition}
-            className={`flex rounded-2xl p-8 ${card.gridClass} bg-[#122933] text-white font-bold scale-x-75 md:rounded-4xl shadow-2xl border border-white/20 backdrop-blur-sm ${index === 0 ? 'stciky top-0' : ''}`}
+            className={`flex rounded-2xl p-8 ${card.gridClass} bg-[#122933] text-white font-bold scale-x-75 md:rounded-4xl shadow-2xl border border-white/20 backdrop-blur-sm ${index === 0 ? 'sticky top-0' : ''}`}
           >
-            <div className="text-center flex ">
-              <div className={`f ${index === 0 ? 'md:text-xl' : 'text-xl'} ${card.icon ? 'flex flex-col items-center justify-center gap-5' : ''}`}>
+            <div className="text-center flex">
+              <div className={`${index === 0 ? 'md:text-xl' : 'text-xl'} ${card.icon ? 'flex flex-col items-center justify-center gap-5' : ''}`}>
                 {card.icon && <card.icon className="w-20 h-20" />}
                 <h1 className={`${index === 0 ? 'text-3xl md:text-6xl' : 'text-6xl'}`}>
                   {card.title}

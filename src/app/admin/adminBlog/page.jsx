@@ -61,8 +61,8 @@ const BlogAdmin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-black p-8 text-center ">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6">
+    <div className="min-h-screen bg-white text-black p-8 text-center ">
+      <div className="max-w-screen mx-auto bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">📝 Blog Admin Panel</h2>
 
         <div className="grid grid-cols-1 gap-4 mb-6">
@@ -78,7 +78,7 @@ const BlogAdmin = () => {
           ))}
           <button
             onClick={handleSubmit}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+            className="bg-[#114959] text-white px-4 py-2 rounded hover:bg-[#114959]/80 transition"
           >
             Add Blog
           </button>
@@ -92,7 +92,7 @@ const BlogAdmin = () => {
               <div className="mt-2 flex gap-2">
                 <button
                   onClick={() => handleUpdate(b.id)}
-                  className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition"
+                  className="px-3 py-1 bg-[#114959] text-white rounded hover:bg-[#114959]/80 transition"
                 >
                   Update
                 </button>

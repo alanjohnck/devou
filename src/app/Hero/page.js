@@ -62,8 +62,7 @@ const HeroSection = () => {
           scale: circleScale,
           opacity: circleOpacity,
           borderRadius: circleBorderRadius,
-          backgroundImage: 'url("/herobg.png")',
-         backgroundPosition: 'center 70vh',
+          backgroundImage: 'url("/bg.png")',
         }}
         className="w-30 h-30 absolute bottom-8 left-1/2 -translate-x-1/2 z-20  rounded-full "
       />

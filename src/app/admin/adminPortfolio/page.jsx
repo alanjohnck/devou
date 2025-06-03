@@ -60,6 +60,7 @@ const PortfolioAdmin = () => {
   const handleUpdate = async (id) => {
     await updateDoc(doc(db, "portfolio", id), formData);
     fetchProjects();
+    
   };
 
   return (
@@ -95,9 +96,9 @@ const PortfolioAdmin = () => {
         />
         <button
           onClick={handleSubmit}
-          className="md:col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded transition"
+          className="md:col-span-2 bg-[#114959] hover:bg-[#114959]/80 text-white font-semibold py-2 rounded transition"
         >
-          ➕ Add Project
+           Add Project
         </button>
       </div>
 
@@ -106,7 +107,7 @@ const PortfolioAdmin = () => {
         {projects.map((p) => (
           <li
             key={p.id}
-            className="bg-gray-100 rounded-lg p-4 shadow flex flex-col md:flex-row md:items-center md:justify-between"
+            className="bg-gray-100 rounded-lg p-4 shadow flex flex-col md:flex-row md:items-center md:justify-around"
           >
             <div>
               <p className="text-lg font-semibold">{p.projectName}</p>
@@ -115,7 +116,7 @@ const PortfolioAdmin = () => {
             <div className="mt-2 md:mt-0 flex gap-2">
               <button
                 onClick={() => handleUpdate(p.id)}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+                className="bg-[#114959] hover:bg-[#114959]/80 text-white px-3 py-1 rounded"
               >
                 Update
               </button>
