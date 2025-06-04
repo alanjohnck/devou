@@ -3,7 +3,7 @@
 import Footer from "../components/footerCompononet";
 import Navbar from "../components/navbarComponent";
 import PortfolioHeroSection from "./Hero/page";
-import ProjectSection from "./Projects/page";
+import ProjectSection from "./projects/page";
 
 
 const PortfolioSection = () =>{

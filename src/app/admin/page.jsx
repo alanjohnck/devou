@@ -20,8 +20,8 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-50 p-4 text-black">
-      <div className="w-full mx-auto bg-white shadow rounded-lg p-4">
+    <div className="min-h-screen w-screen bg-gray-50  text-black">
+      <div className="w-full mx-auto bg-white shadow rounded-lg p-8">
         <img src="./logobgwhite.png" className="w-20 h-8"></img>
         <h1 className="text-2xl font-bold text-center mb-4">Devou Admin Dashboard</h1>
 

@@ -75,8 +75,8 @@ const Navbar = () => {
           {/* Contact (desktop only) */}
           <div className="hidden md:block px-8 py-4 rounded-full bg-[#114959]">
             <a
-              href="#contact"
-              className="text-white hover:text-teal-300 transition-colors"
+              href="/contact"
+              className="text-white hover:text-white transition-colors"
             >
               Contact
             </a>
@@ -95,19 +95,18 @@ const Navbar = () => {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden mt-4 bg-[#122933] p-4 rounded-lg shadow-lg space-y-4">
+          <div className="md:hidden mt-4 bg-white text-black p-4 rounded-lg shadow-lg space-y-4">
             {[
-              { name: "About", href: "#about" },
-              { name: "Services", href: "#services" },
-              { name: "Pricing", href: "/pricing" },
-              { name: "Career", href: "#career" },
-              { name: "FAQ", href: "#faq" },
-              { name: "Contact", href: "#contact" },
+              { name: "Home", href: "/" },
+              { name: "Portfolio", href: "/portfolio" },
+              { name: "Blog", href: "/blog" },
+              { name: "Careers", href: "/careers" },
+             
             ].map(({ name, href }) => (
               <a
                 key={name}
                 href={href}
-                className="block text-white hover:text-teal-300 transition-colors"
+                className="block text-black hover:text-teal-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {name}

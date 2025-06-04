@@ -5,9 +5,9 @@ import { db } from "../admin/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import Navbar from "../components/navbarComponent";
 import Footer from "../components/footerCompononet";
-
+import Spinner from "../components/Loading";
 const CareerPage = () => {
-  const [jobOpenings, setJobOpenings] = useState([]);
+  const [jobOpenings, setJobOpenings] = useState(null);
  
   useEffect(() => {
     const fetchJobs = async () => {
@@ -27,10 +27,11 @@ const CareerPage = () => {
     fetchJobs();
   }, []);
 
+  if(!jobOpenings) return <Spinner />
   return (
     <>
     <Navbar />
-    <section style={{backgroundImage:'url("./herobg.png")'}}  id="career" className=" h-fit md:h-screen  md:p-0 w-screen bg-slate-50 bg-cover bg-repeat">
+    <section style={{backgroundImage:'url("./herobg.png")'}}  id="career" className=" h-full md:h-screen  md:p-0 w-screen bg-slate-50 bg-cover bg-repeat">
       <div className=" pt-30">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">

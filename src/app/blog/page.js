@@ -9,9 +9,10 @@ import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import Navbar from "../components/navbarComponent";
 import Footer from "../components/footerCompononet";
+import Spinner from "../components/Loading";
 
 const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -23,6 +24,7 @@ const Blog = () => {
     fetchBlogs();
   }, []);
 
+  if(!blogs) return <Spinner />
   return (
     <>
      
@@ -31,17 +33,17 @@ const Blog = () => {
       <div className="w-3/4 flex py-8 px-2">
           <h1 className="text-6xl font-bold" >Blogs</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-8">
+      <div className="w-3/4 grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-8">
         {blogs.map((blog) => (
           <Link
             key={blog.id}
             href={`/blog/${blog.id}`}
-            className="bg-gray-100 w-[40vh] h-[50vh] flex flex-col justify-end rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 relative"
+            className="bg-gray-100 w-[40vh] h-[50vh] flex flex-col justify-end rounded-2xl overflow-hidden  duration-300 relative"
           >
             {blog.imageUrl && (
               <img
                   src={blog.imageUrl}               
-                  className="w-full h-full object-cover scale-100 absolute inset-0 z-1 transform transition-transform duration-300 hover:scale-110 opacity-10 "
+                  className="w-full h-full object-cover scale-100 absolute inset-0 z-1 transform transition-transform duration-300 hover:scale-110 opacity-40 "
              />
             )}
             <div className="p-4 flex flex-col z-10">

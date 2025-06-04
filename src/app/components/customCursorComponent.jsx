@@ -1,7 +1,11 @@
-import React, { useEffect, useRef } from "react";
+"use client";
 
-const CustomCursor = () => {
+import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
+
+const CustomCursor = ({ projectId }) => {
   const cursorRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const moveCursor = (e) => {
@@ -9,38 +13,33 @@ const CustomCursor = () => {
       if (cursorRef.current) {
         cursorRef.current.style.top = `${clientY}px`;
         cursorRef.current.style.left = `${clientX}px`;
+        cursorRef.current.style.opacity = projectId ? 1 : 0;
       }
     };
 
-    const showCursor = () => {
-      if (cursorRef.current) cursorRef.current.style.opacity = 1;
+    const handleClick = () => {
+      if (projectId) {
+        router.push(`/portfolio/projects/${projectId}`);
+      }
     };
-
-    const hideCursor = () => {
-      if (cursorRef.current) cursorRef.current.style.opacity = 0;
-    };
-
-    // Select target elements
-    const targets = document.querySelectorAll(".cursor-target");
 
     document.addEventListener("mousemove", moveCursor);
-    targets.forEach((el) => {
-      el.addEventListener("mouseenter", showCursor);
-      el.addEventListener("mouseleave", hideCursor);
-    });
+    document.addEventListener("click", handleClick);
 
     return () => {
       document.removeEventListener("mousemove", moveCursor);
-      targets.forEach((el) => {
-        el.removeEventListener("mouseenter", showCursor);
-        el.removeEventListener("mouseleave", hideCursor);
-      });
+      document.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [projectId, router]);
 
-  return <div ref={cursorRef} className="custom-cursor text-white text-center flex items-center" >
-    <p className="text-sm">Learn More</p>
-  </div>;
+  return (
+    <div
+      ref={cursorRef}
+      className="custom-cursor text-white text-center flex items-center justify-center"
+    >
+      <p className="text-sm pointer-events-none">Learn More</p>
+    </div>
+  );
 };
 
 export default CustomCursor;

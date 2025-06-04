@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Spinner from "@/app/components/Spinner";
 
 const PortfolioHeroSection = () => {
    const sectionRef = useRef(null);
@@ -11,9 +10,7 @@ const PortfolioHeroSection = () => {
     offset: ['start start', 'end start'],
    });
 
-    const handleVideoLoad = () => {
-      setIsLoading(false);
-    };
+    
 
    const borderRadius = useTransform(scrollYProgress, [0, 1], [50, 0]);
    const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1.2]);
@@ -37,10 +34,9 @@ const PortfolioHeroSection = () => {
           playsInline
           className="w-full h-full object-cover absolute inset-0 -z-10"
           preload="auto"
-          onLoadedData={handleVideoLoad}
 
         >
-          <source src="https://sqwghclq2pchj0ml.public.blob.vercel-storage.com/herovideo-U4JoDpy4e2K3hAQm4cNvym9bhhSBDI.mp4" type="video/mp4" />
+          <source src="https://sqwghclq2pchj0ml.public.blob.vercel-storage.com/portfolio-2-T4V4uj0ingWtnzOjUg2o32GzQsiOjP.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
