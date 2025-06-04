@@ -38,7 +38,7 @@ const HeroSection = () => {
           playsInline
           className="w-full h-full object-cover rounded-[4rem]"
         >
-          <source src="https://sqwghclq2pchj0ml.public.blob.vercel-storage.com/portfolio-JHaH0EQLe6YmAX5jNxxAqUFjC65R0K.mp4" type="video/mp4" />
+          <source src="https://sqwghclq2pchj0ml.public.blob.vercel-storage.com/portfolio-2-T4V4uj0ingWtnzOjUg2o32GzQsiOjP.mp4" type="video/mp4" />
         </video>
 
         {/* Text content */}
