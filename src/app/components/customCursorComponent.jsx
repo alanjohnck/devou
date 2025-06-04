@@ -19,7 +19,7 @@ const CustomCursor = ({ projectId }) => {
 
     const handleClick = () => {
       if (projectId) {
-        router.push(`/portfolio/projects/${projectId}`);
+        router.push(`/portfolio/Projects/${projectId}`);
       }
     };
 

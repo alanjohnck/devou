@@ -2,7 +2,7 @@
 import Footer from "../components/footerCompononet";
 import Navbar from "../components/navbarComponent";
 import PortfolioHeroSection from "./Hero/heroPortfolio";
-import ProjectSection from "./projects/projectSection";
+import ProjectSection from "./Projects/projectSection";
 
 
 const PortfolioSection = () =>{
