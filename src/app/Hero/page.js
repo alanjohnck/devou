@@ -28,7 +28,7 @@ const HeroSection = () => {
           width: "100vw",
           height: "100vh",
         }}
-        className="sticky top-0 z-10 overflow-hidden"
+        className="sticky top-0 z-10 overflow-x-hidden "
       >
         {/* Background video */}
         <video

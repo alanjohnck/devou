@@ -30,10 +30,10 @@ const Blog = () => {
      
     <Navbar />
     <div style={{backgroundImage:'url("./herobg.png")'}} className="min-h-[200vh] flex flex-col items-center justify-center bg-white text-black p-8 bg-no-repeat bg-cover">
-      <div className="w-3/4 flex py-8 px-2">
-          <h1 className="text-6xl font-bold" >Blogs</h1>
+      <div className="w-3/4 flex justify-center py-8 px-2">
+          <h1 className="text-3xl  md:text-6xl  font-bold" >Blogs</h1>
       </div>
-      <div className="w-3/4 grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-8">
+      <div className="flex flex-col  md:grid grid-cols-3 grid-rows-3 gap-8 ">
         {blogs.map((blog) => (
           <Link
             key={blog.id}

@@ -56,7 +56,7 @@ const CareerPage = () => {
      
 
       {/* Job Description Panel */}
-      <div className={`w-full md:w-1/2 text-white bg-linear-to-r  from-[#07232B] to-[#004966] ${index%2==0?"rounded-l-2xl":"rounded-r-2xl"}  shadow-md hover:shadow-lg transition-shadow p-6`}>
+      <div className={`w-full md:w-1/2 text-white bg-linear-to-r  from-[#07232B] to-[#004966] ${index%2==0?"rounded-0 md:rounded-l-2xl":"rounded-0 md:rounded-r-2xl"}  shadow-md hover:shadow-lg transition-shadow p-6`}>
         <h3 className="text-xl font-semibold  mb-2">
           {job.role}
         </h3>
