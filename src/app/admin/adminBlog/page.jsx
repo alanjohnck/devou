@@ -21,6 +21,7 @@ const BlogAdmin = () => {
     longDesc: "",
     imageUrl: "",
   });
+  const [editingId, setEditingId] = useState(null); // Track if editing an existing blog
 
   const blogsRef = collection(db, "blogs");
 
@@ -38,7 +39,14 @@ const BlogAdmin = () => {
   };
 
   const handleSubmit = async () => {
-    await addDoc(blogsRef, formData);
+    if (editingId) {
+      // If editing, update the existing blog
+      await updateDoc(doc(db, "blogs", editingId), formData);
+      setEditingId(null); // Reset editing state
+    } else {
+      // Otherwise, add a new blog
+      await addDoc(blogsRef, formData);
+    }
     fetchBlogs();
     setFormData({
       topic: "",
@@ -55,9 +63,16 @@ const BlogAdmin = () => {
     fetchBlogs();
   };
 
-  const handleUpdate = async (id) => {
-    await updateDoc(doc(db, "blogs", id), formData);
-    fetchBlogs();
+  const handleEdit = (blog) => {
+    setFormData({
+      topic: blog.topic || "",
+      title: blog.title || "",
+      date: blog.date || "",
+      shortDesc: blog.shortDesc || "",
+      longDesc: blog.longDesc || "",
+      imageUrl: blog.imageUrl || "",
+    });
+    setEditingId(blog.id);
   };
 
   return (
@@ -80,8 +95,26 @@ const BlogAdmin = () => {
             onClick={handleSubmit}
             className="bg-[#114959] text-white px-4 py-2 rounded hover:bg-[#114959]/80 transition"
           >
-            Add Blog
+            {editingId ? "Save Changes" : "Add Blog"}
           </button>
+          {editingId && (
+            <button
+              onClick={() => {
+                setEditingId(null);
+                setFormData({
+                  topic: "",
+                  title: "",
+                  date: "",
+                  shortDesc: "",
+                  longDesc: "",
+                  imageUrl: "",
+                });
+              }}
+              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition mt-2"
+            >
+              Cancel Edit
+            </button>
+          )}
         </div>
 
         <ul className="space-y-4">
@@ -89,9 +122,9 @@ const BlogAdmin = () => {
             <li key={b.id} className="border p-4 rounded-md shadow-sm bg-gray-50">
               <div className="font-semibold text-lg">{b.title}</div>
               <div className="text-sm text-gray-600">{b.date}</div>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 justify-center">
                 <button
-                  onClick={() => handleUpdate(b.id)}
+                  onClick={() => handleEdit(b)}
                   className="px-3 py-1 bg-[#114959] text-white rounded hover:bg-[#114959]/80 transition"
                 >
                   Update

@@ -23,6 +23,8 @@ const PortfolioAdmin = () => {
     longDesc: "",
   });
 
+  const [editingId, setEditingId] = useState(null);
+
   const portfolioRef = collection(db, "portfolio");
 
   const fetchProjects = async () => {
@@ -39,7 +41,14 @@ const PortfolioAdmin = () => {
   };
 
   const handleSubmit = async () => {
-    await addDoc(portfolioRef, formData);
+    if (editingId) {
+      // Update existing project
+      await updateDoc(doc(db, "portfolio", editingId), formData);
+      setEditingId(null);
+    } else {
+      // Add new project
+      await addDoc(portfolioRef, formData);
+    }
     fetchProjects();
     setFormData({
       projectName: "",
@@ -55,16 +64,49 @@ const PortfolioAdmin = () => {
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "portfolio", id));
     fetchProjects();
+    // If deleting project being edited, reset form & editing state
+    if (editingId === id) {
+      setEditingId(null);
+      setFormData({
+        projectName: "",
+        shortDesc: "",
+        year: "",
+        client: "",
+        industry: "",
+        imageUrl: "",
+        longDesc: "",
+      });
+    }
   };
 
-  const handleUpdate = async (id) => {
-    await updateDoc(doc(db, "portfolio", id), formData);
-    fetchProjects();
-    
+  const handleEdit = (project) => {
+    setFormData({
+      projectName: project.projectName || "",
+      shortDesc: project.shortDesc || "",
+      year: project.year || "",
+      client: project.client || "",
+      industry: project.industry || "",
+      imageUrl: project.imageUrl || "",
+      longDesc: project.longDesc || "",
+    });
+    setEditingId(project.id);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+    setFormData({
+      projectName: "",
+      shortDesc: "",
+      year: "",
+      client: "",
+      industry: "",
+      imageUrl: "",
+      longDesc: "",
+    });
   };
 
   return (
-    <div className="p-6 w-screen h-screen mx-auto bg-white text-black">
+    <div className="p-6   mx-auto bg-white text-black">
       <h2 className="text-2xl font-bold mb-6 text-center">📁 Portfolio Admin</h2>
 
       {/* Form */}
@@ -98,8 +140,16 @@ const PortfolioAdmin = () => {
           onClick={handleSubmit}
           className="md:col-span-2 bg-[#114959] hover:bg-[#114959]/80 text-white font-semibold py-2 rounded transition"
         >
-           Add Project
+          {editingId ? "Save Changes" : "Add Project"}
         </button>
+        {editingId && (
+          <button
+            onClick={handleCancelEdit}
+            className="md:col-span-2 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 rounded transition"
+          >
+            Cancel Edit
+          </button>
+        )}
       </div>
 
       {/* Projects List */}
@@ -115,7 +165,7 @@ const PortfolioAdmin = () => {
             </div>
             <div className="mt-2 md:mt-0 flex gap-2">
               <button
-                onClick={() => handleUpdate(p.id)}
+                onClick={() => handleEdit(p)}
                 className="bg-[#114959] hover:bg-[#114959]/80 text-white px-3 py-1 rounded"
               >
                 Update

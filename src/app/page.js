@@ -11,15 +11,26 @@ import Footer from "./components/footerCompononet";
 import Services from "./service/page";
 import Navbar from "./components/navbarComponent";
 import Spinner from "./components/Loading";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [bgLoaded, setBgLoaded] = useState(true); // true by default
 
   useEffect(() => {
+    // Loading spinner timeout
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); 
+    }, 4000);
 
-    return () => clearTimeout(timeout);
+    // Preload background image and handle failure
+    const img = new Image();
+    img.src = "./bg.png";
+    img.onload = () => setBgLoaded(true);
+    img.onerror = () => setBgLoaded(false);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   if (isLoading) return <Spinner />;
@@ -27,13 +38,12 @@ export default function Home() {
   return (
     <div className="h-auto relative">
       <Navbar />
-
       <HeroSection />
-
       <div
         style={{
-          backgroundImage: 'url("./bg.png")',
-          backgroundPosition: "center -125vh",
+          backgroundImage: bgLoaded ? 'url("./bg.png")' : "none",
+          backgroundColor: bgLoaded ? "transparent" : "#1a1a1a", // fallback color
+          backgroundPosition: "center -40vh",
         }}
         className="w-screen h-fit absolute z-30 flex bg-cover bg-no-repeat flex-col overflow-x-hidden"
       >

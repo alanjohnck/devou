@@ -20,12 +20,12 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-50  text-black">
-      <div className="w-full mx-auto bg-white shadow rounded-lg p-8">
-        <img src="./logobgwhite.png" className="w-20 h-8"></img>
-        <h1 className="text-2xl font-bold text-center mb-4">Devou Admin Dashboard</h1>
+    <div className="h-fit w-screen bg-white text-black">
+      <div className="w-full h-auto  mx-auto bg-white shadow rounded-lg p-8">
+        <img src="./logobgwhite.png" className="w-20 h-8 "></img>
+        <h1 className="text-2xl font-bold text-center mb-4">Admin Dashboard</h1>
 
-        <div className="flex justify-center gap-4 mb-6">
+        <div className="h-fit max-w-full  flex justify-center gap-4 mb-6">
           <button
             onClick={() => setActiveTab("portfolio")}
             className={`px-4 py-2 rounded font-medium ${
@@ -57,8 +57,9 @@ const AdminDashboard = () => {
            Blogs
           </button>
         </div>
-
+        <div className="max-w-screen h-fit">
         {renderSection()}
+        </div>
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ const CareersAdmin = () => {
     type: "",
     location: "",
   });
+  const [editingId, setEditingId] = useState(null); // Track role being edited
 
   const careersRef = collection(db, "careers");
 
@@ -36,7 +37,12 @@ const CareersAdmin = () => {
   };
 
   const handleSubmit = async () => {
-    await addDoc(careersRef, formData);
+    if (editingId) {
+      await updateDoc(doc(db, "careers", editingId), formData);
+      setEditingId(null);
+    } else {
+      await addDoc(careersRef, formData);
+    }
     fetchRoles();
     setFormData({ role: "", description: "", type: "", location: "" });
   };
@@ -44,16 +50,32 @@ const CareersAdmin = () => {
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "careers", id));
     fetchRoles();
+    if (editingId === id) {
+      setEditingId(null);
+      setFormData({ role: "", description: "", type: "", location: "" });
+    }
   };
 
-  const handleUpdate = async (id) => {
-    await updateDoc(doc(db, "careers", id), formData);
-    fetchRoles();
+  const handleEdit = (role) => {
+    setFormData({
+      role: role.role || "",
+      description: role.description || "",
+      type: role.type || "",
+      location: role.location || "",
+    });
+    setEditingId(role.id);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+    setFormData({ role: "", description: "", type: "", location: "" });
   };
 
   return (
-    <div className="max-w-screen h-screen mx-auto p-6 bg-white  text-black rounded-lg mt-10">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">💼 Careers Admin Panel</h2>
+    <div className=" mx-auto p-6 bg-white text-black rounded-lg mt-10">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
+        💼 Careers Admin Panel
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <input
@@ -65,7 +87,6 @@ const CareersAdmin = () => {
         />
         <textarea
           name="description"
-          type="text"
           value={formData.description}
           onChange={handleChange}
           placeholder="Description"
@@ -91,8 +112,17 @@ const CareersAdmin = () => {
         onClick={handleSubmit}
         className="bg-[#114959] text-white px-6 py-2 rounded hover:bg-[#114959]/70 transition"
       >
-        Add Role
+        {editingId ? "Save Changes" : "Add Role"}
       </button>
+
+      {editingId && (
+        <button
+          onClick={handleCancelEdit}
+          className="ml-4 bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
+        >
+          Cancel Edit
+        </button>
+      )}
 
       <ul className="mt-8 space-y-4">
         {roles.map((r) => (
@@ -109,7 +139,7 @@ const CareersAdmin = () => {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => handleUpdate(r.id)}
+                onClick={() => handleEdit(r)}
                 className="bg-[#114959] text-white px-4 py-1 rounded hover:bg-[#114959]/80"
               >
                 Update
