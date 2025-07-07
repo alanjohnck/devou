@@ -107,6 +107,7 @@ export default function RootLayout({ children }) {
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
           <meta property="og:title" content="Devou - Design Develop Deploy" />
+          <meta name="google-site-verification" content="lBTcl_zVLjKhEpVFGoJ8E8ygW1Bk5ug6eLVWRPwmUz4" />
         <meta property="og:description" content="We offer cutting-edge web development, design, and digital solutions." />
         <meta property="og:url" content="https://www.devou.in/" />
         <meta property="og:image" content="https://www.devou.in/favicon.ico" />
