@@ -45,28 +45,28 @@ const HeroSection = () => {
         
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 w-full max-w-4xl">
-          <div className="flex flex-col items-center p-6 bg-gray-900 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-gray-700 rounded-lg mb-4">
-              <Zap className="h-6 w-6 text-gray-300" />
+          <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="p-3 bg-gray-100 rounded-lg mb-4">
+              <Zap className="h-6 w-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Cutting-Edge Tech</h3>
-            <p className="text-gray-400 text-center">Leveraging the latest frameworks and technologies for optimal performance.</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Cutting-Edge Tech</h3>
+            <p className="text-gray-700 text-center">Leveraging the latest frameworks and technologies for optimal performance.</p>
           </div>
           
-          <div className="flex flex-col items-center p-6 bg-gray-900 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-gray-700 rounded-lg mb-4">
-              <Layers className="h-6 w-6 text-gray-300" />
+          <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="p-3 bg-gray-100 rounded-lg mb-4">
+              <Layers className="h-6 w-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Seamless UX</h3>
-            <p className="text-gray-400 text-center">Creating intuitive interfaces that delight and engage your users.</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Seamless UX</h3>
+            <p className="text-gray-700 text-center">Creating intuitive interfaces that delight and engage your users.</p>
           </div>
           
-          <div className="flex flex-col items-center p-6 bg-gray-900 backdrop-blur-sm rounded-xl">
-            <div className="p-3 bg-gray-700 rounded-lg mb-4">
-              <Code className="h-6 w-6 text-gray-300" />
+          <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="p-3 bg-gray-100 rounded-lg mb-4">
+              <Code className="h-6 w-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Scalable Solutions</h3>
-            <p className="text-gray-400 text-center">Building systems that grow with your business needs and user base.</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Scalable Solutions</h3>
+            <p className="text-gray-700 text-center">Building systems that grow with your business needs and user base.</p>
           </div>
         </div>
       </div>

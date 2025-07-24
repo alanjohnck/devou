@@ -40,54 +40,54 @@ const ContactSection = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Contact Info */}
           <div className="lg:w-1/3 space-y-8">
-            <div className="bg-gray-900 backdrop-blur-sm p-6 rounded-xl hover:bg-gray-800 transition-all">
-              <div className="p-3 bg-gray-700 rounded-lg inline-flex mb-4">
-                <MapPin className="h-6 w-6 text-gray-300" />
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+              <div className="p-3 bg-gray-100 rounded-lg inline-flex mb-4">
+                <MapPin className="h-6 w-6 text-gray-800" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Our Location</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-semibold mb-2 text-black">Our Location</h3>
+              <p className="text-gray-600">
                 Thrikkakara<br />
                 Ernakulam,682021
               </p>
             </div>
             
-            <div className="bg-gray-900 backdrop-blur-sm p-6 rounded-xl hover:bg-gray-800 transition-all">
-              <div className="p-3 bg-gray-700 rounded-lg inline-flex mb-4">
-                <Mail className="h-6 w-6 text-gray-300" />
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+              <div className="p-3 bg-gray-100 rounded-lg inline-flex mb-4">
+                <Mail className="h-6 w-6 text-gray-800" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-semibold mb-2 text-black">Email Us</h3>
+              <p className="text-gray-600">
               devou.in@gmail.com<br />
               </p>
             </div>
             
-            <div className="bg-gray-900 backdrop-blur-sm p-6 rounded-xl hover:bg-gray-800 transition-all">
-              <div className="p-3 bg-gray-700 rounded-lg inline-flex mb-4">
-                <Phone className="h-6 w-6 text-gray-300" />
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+              <div className="p-3 bg-gray-100 rounded-lg inline-flex mb-4">
+                <Phone className="h-6 w-6 text-gray-800" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-semibold mb-2 text-black">Call Us</h3>
+              <p className="text-gray-600">
               +91 8089640469<br />
               </p>
             </div>
             
             <div className="flex space-x-4 mt-6">
-              <a href="https://www.instagram.com/devou.in" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-all">
-                <Instagram  className="h-5 w-5 text-white" />
+              <a href="https://www.instagram.com/devou.in" className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all">
+                <Instagram  className="h-5 w-5 text-gray-800" />
               </a>
               
-              <a href="https://github.com/devou-org" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-all">
-                <Github className="h-5 w-5 text-white" />
+              <a href="https://github.com/devou-org" className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all">
+                <Github className="h-5 w-5 text-gray-800" />
               </a>
             </div>
           </div>
           
           {/* Contact Form */}
           <div className="lg:w-2/3">
-            <div className="bg-gray-900 backdrop-blur-sm p-8 rounded-xl">
+            <div className="bg-white p-8 rounded-xl shadow-lg">
               {formState.submitted ? (
                 <div className="text-center py-8">
-                   <p className='font-bold text-3xl'>Scheduling your meet....</p>
+                   <p className='font-bold text-3xl text-black'>Scheduling your meet....</p>
                   {/* <button 
                     className="px-6 py-3 bg-white text-indigo-900 font-medium rounded-lg inline-flex items-center hover:bg-white/90 transition-all"
                     onClick={() => setFormState({name: '', email: '', message: '', submitted: false})}
@@ -99,10 +99,10 @@ const ContactSection = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label className="block text-white mb-2 text-sm">Your Name</label>
+                      <label className="block text-black mb-2 text-sm">Your Name</label>
                       <input 
                         type="text" 
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-teal-400 text-white"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 text-black"
                         placeholder="John Doe"
                         value={formState.name}
                         onChange={(e) => setFormState({...formState, name: e.target.value})}
@@ -110,10 +110,10 @@ const ContactSection = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-white mb-2 text-sm">Your Email</label>
+                      <label className="block text-black mb-2 text-sm">Your Email</label>
                       <input 
                         type="email" 
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-teal-400 text-white"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 text-black"
                         placeholder="john@example.com"
                         value={formState.email}
                         onChange={(e) => setFormState({...formState, email: e.target.value})}
@@ -122,9 +122,9 @@ const ContactSection = () => {
                     </div>
                   </div>
                   <div className="mb-6">
-                    <label className="block text-white mb-2 text-sm">Your Message</label>
+                    <label className="block text-black mb-2 text-sm">Your Message</label>
                     <textarea 
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-teal-400 text-white h-32 resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 text-black h-32 resize-none"
                       placeholder="Tell us about your project..."
                       value={formState.message}
                       onChange={(e) => setFormState({...formState, message: e.target.value})}
@@ -134,7 +134,7 @@ const ContactSection = () => {
                   
                   <button 
                     type="submit" 
-                    className="px-6 py-3 bg-white text-indigo-900 font-medium rounded-lg flex items-center hover:bg-white/90 transition-all"
+                    className="px-6 py-3 bg-gray-800 text-white font-medium rounded-lg flex items-center hover:bg-gray-700 transition-all"
                   >
                     Send Message
                     <ChevronRight className="ml-2 h-4 w-4" />

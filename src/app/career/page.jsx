@@ -51,21 +51,21 @@ const CareerPage = () => {
           {jobOpenings.map((job, index) => (
             <div
               key={index}
-              className="p-6 bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
             >
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-xl font-semibold text-black mb-2">
                 {job.title}
               </h3>
-              <p className="text-gray-400 mb-4">{job.description}</p>
-              <ul className="list-disc list-inside text-gray-400 mb-4">
+              <p className="text-gray-700 mb-4">{job.description}</p>
+              <ul className="list-disc list-inside text-gray-600 mb-4">
                 {job.requirements.map((req, idx) => (
                   <li key={idx}>{req}</li>
                 ))}
               </ul>
-              <p className="text-sm text-gray-500 mb-2">
+              <p className="text-sm text-gray-600 mb-2">
                 <strong>Location:</strong> {job.location}
               </p>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-gray-600 mb-4">
                 <strong>Type:</strong> {job.type}
               </p>
               <a

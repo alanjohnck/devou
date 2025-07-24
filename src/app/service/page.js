@@ -78,67 +78,69 @@ const ServicesSection = () => {
               key={index}
               className={`p-6 rounded-xl cursor-pointer transition-all duration-300 ${
                 activeService === index 
-                  ? `bg-gradient-to-r ${service.bgColor} text-white shadow-lg scale-105` 
-                  : 'bg-gray-900 hover:bg-gray-800 text-gray-300'
+                  ? `bg-white text-black shadow-xl scale-105` 
+                  : 'bg-white hover:bg-gray-50 text-black shadow-md'
               }`}
               onClick={() => setActiveService(index)}
             >
               <div className={`p-3 rounded-lg inline-flex mb-4 ${
-                activeService === index ? 'bg-white/20' : `bg-gradient-to-r ${service.bgColor}`
+                activeService === index ? 'bg-gray-100' : 'bg-gray-200'
               }`}>
-                {service.icon}
+                <div className="h-8 w-8 text-gray-800">
+                  {React.cloneElement(service.icon, { className: "h-8 w-8 text-gray-800" })}
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className={`text-sm ${activeService === index ? 'text-white/80' : 'text-gray-400'}`}>
+              <h3 className="text-xl font-semibold mb-2 text-black">{service.title}</h3>
+              <p className={`text-sm ${activeService === index ? 'text-gray-700' : 'text-gray-600'}`}>
                 {activeService === index ? service.description : service.description.substring(0, 60) + '...'}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="bg-gray-900 p-8 rounded-2xl">
+        <div className="bg-white p-8 rounded-2xl shadow-lg">
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="md:w-1/3">
-              <h3 className="text-2xl font-bold text-white mb-4">{services[activeService].title}</h3>
-              <p className="text-gray-400 mb-6">{services[activeService].description}</p>
+              <h3 className="text-2xl font-bold text-black mb-4">{services[activeService].title}</h3>
+              <p className="text-gray-600 mb-6">{services[activeService].description}</p>
              
             </div>
             <div className="md:w-2/3">
-              <div className="bg-black p-6 rounded-xl shadow-md">
-                <h4 className="text-lg font-semibold text-white mb-4">Technologies We Use</h4>
+              <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+                <h4 className="text-lg font-semibold text-black mb-4">Technologies We Use</h4>
                 <div className="flex flex-wrap gap-2">
                   {services[activeService].technologies.map((tech, index) => (
-                    <span key={index} className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">
+                    <span key={index} className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="mt-6 pt-6 border-t border-gray-700">
-                  <h4 className="text-lg font-semibold text-white mb-4">Our Approach</h4>
+                <div className="mt-6 pt-6 border-t border-gray-300">
+                  <h4 className="text-lg font-semibold text-black mb-4">Our Approach</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <div className="mr-2 p-1 bg-gray-800 rounded-full">
-                        <ChevronRight size={12} className="text-gray-400" />
+                      <div className="mr-2 p-1 bg-gray-200 rounded-full">
+                        <ChevronRight size={12} className="text-gray-600" />
                       </div>
-                      <span className="text-gray-400 text-sm">In-depth discovery and requirements analysis</span>
+                      <span className="text-gray-600 text-sm">In-depth discovery and requirements analysis</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mr-2 p-1 bg-gray-800 rounded-full">
-                        <ChevronRight size={12} className="text-gray-400" />
+                      <div className="mr-2 p-1 bg-gray-200 rounded-full">
+                        <ChevronRight size={12} className="text-gray-600" />
                       </div>
-                      <span className="text-gray-400 text-sm">Collaborative design and development process</span>
+                      <span className="text-gray-600 text-sm">Collaborative design and development process</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mr-2 p-1 bg-gray-800 rounded-full">
-                        <ChevronRight size={12} className="text-gray-400" />
+                      <div className="mr-2 p-1 bg-gray-200 rounded-full">
+                        <ChevronRight size={12} className="text-gray-600" />
                       </div>
-                      <span className="text-gray-400 text-sm">Rigorous testing and quality assurance</span>
+                      <span className="text-gray-600 text-sm">Rigorous testing and quality assurance</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mr-2 p-1 bg-gray-800 rounded-full">
-                        <ChevronRight size={12} className="text-gray-400" />
+                      <div className="mr-2 p-1 bg-gray-200 rounded-full">
+                        <ChevronRight size={12} className="text-gray-600" />
                       </div>
-                      <span className="text-gray-400 text-sm">Seamless deployment and ongoing support</span>
+                      <span className="text-gray-600 text-sm">Seamless deployment and ongoing support</span>
                     </li>
                   </ul>
                 </div>
