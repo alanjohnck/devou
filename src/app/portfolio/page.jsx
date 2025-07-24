@@ -11,7 +11,7 @@ const PortfolioSection = () => {
       title: "TagDynamix",
       category: "Web Application",
       description: "Custom inventory management system for retail businesses",
-      bgColor: "bg-indigo-600",
+      bgColor: "bg-gray-800",
       link: "https://www.tagdynamix.com"
     },
     {
@@ -19,7 +19,7 @@ const PortfolioSection = () => {
       title: "Rainbow Gardens",
       category: "Web Application",
       description: "E-commerce platform for garden supplies and plants",
-      bgColor: "bg-purple-600",
+      bgColor: "bg-gray-700",
       link: "https://www.rainbowgardens.in/"
     },
     {
@@ -27,7 +27,7 @@ const PortfolioSection = () => {
       title: "SnvStarlight",
       category: "Web Application",
       description: "Telemedicine platform connecting patients with healthcare providers",
-      bgColor: "bg-blue-600",
+      bgColor: "bg-gray-600",
       link: "https://snvstarlight.com/"
     },
     {
@@ -35,7 +35,7 @@ const PortfolioSection = () => {
       title: "MMH Groups",  
       category: "E-commerce",
       description: "AI-powered retail management system with inventory optimization",
-      bgColor: "bg-teal-600",
+      bgColor: "bg-gray-500",
       link: "https://mmhgroups.com/"
     },
     {
@@ -43,7 +43,7 @@ const PortfolioSection = () => {
       title: "Kidco", 
       category: "EdTech",
       description: "Interactive learning management system for remote education",
-      bgColor: "bg-pink-600",
+      bgColor: "bg-gray-900",
       link: "http://www.kidco.in/"
     }];
   
@@ -66,21 +66,21 @@ const PortfolioSection = () => {
   const row1 = [...projectsWithImages, ...projectsWithImages];
   
   return (
-    <section id="portfolio" className="py-20 bg-white relative overflow-hidden">
+    <section id="portfolio" className="py-20 bg-black relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full bg-indigo-100/50 blur-3xl opacity-30"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full bg-purple-100/50 blur-3xl opacity-25"></div>
+        <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full bg-gray-900/50 blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full bg-gray-800/50 blur-3xl opacity-25"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-sm font-medium text-indigo-800 mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-indigo-500 mr-2"></span>
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800 text-sm font-medium text-gray-300 mb-6">
+            <span className="flex h-2 w-2 rounded-full bg-gray-500 mr-2"></span>
             Our Portfolio
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#3E268F]">Featured Projects</h2>
-          <p className="text-xl max-w-2xl mx-auto text-gray-600 mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Featured Projects</h2>
+          <p className="text-xl max-w-2xl mx-auto text-gray-400 mb-12">
             Explore some of our best work that showcases our expertise across various industries and technologies.
           </p>
         </div>
@@ -134,8 +134,8 @@ const PortfolioSection = () => {
                
                
           {/* Gradient overlays for smooth fade on sides */}
-        <div className="absolute top-0 left-0 h-full w-15 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-        <div className="absolute top-0 right-0 h-full w-15 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 left-0 h-full w-15 bg-gradient-to-r from-black to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 right-0 h-full w-15 bg-gradient-to-l from-black to-transparent pointer-events-none z-10"></div>
       </div>
       
    

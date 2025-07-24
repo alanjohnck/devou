@@ -34,13 +34,13 @@ const CareerPage = () => {
   ];
 
   return (
-    <section id="career" className="py-20 pt-20 bg-slate-50">
+    <section id="career" className="py-20 pt-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Join Our Team
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             At Devou, we are always looking for talented individuals to help us
             build innovative digital solutions. Explore our current job
             openings and become a part of our journey.
@@ -51,26 +51,26 @@ const CareerPage = () => {
           {jobOpenings.map((job, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="p-6 bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 {job.title}
               </h3>
-              <p className="text-slate-600 mb-4">{job.description}</p>
-              <ul className="list-disc list-inside text-slate-600 mb-4">
+              <p className="text-gray-400 mb-4">{job.description}</p>
+              <ul className="list-disc list-inside text-gray-400 mb-4">
                 {job.requirements.map((req, idx) => (
                   <li key={idx}>{req}</li>
                 ))}
               </ul>
-              <p className="text-sm text-slate-500 mb-2">
+              <p className="text-sm text-gray-500 mb-2">
                 <strong>Location:</strong> {job.location}
               </p>
-              <p className="text-sm text-slate-500 mb-4">
+              <p className="text-sm text-gray-500 mb-4">
                 <strong>Type:</strong> {job.type}
               </p>
               <a
                   href="mailto:devou.in@gmail.com?subject=Application for the Interns"
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
               >
                 Apply Now
               </a>

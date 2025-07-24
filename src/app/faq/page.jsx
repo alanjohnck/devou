@@ -39,7 +39,7 @@ const FAQPage = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Have questions? We’ve got answers. If you don’t find what you’re
+            Have questions? We've got answers. If you don't find what you're
             looking for, feel free to contact us.
           </p>
         </div>
@@ -57,7 +57,7 @@ const FAQPage = () => {
                 <h3 className="text-lg font-semibold text-slate-800">
                   {faq.question}
                 </h3>
-                <span className="text-indigo-600">
+                <span className="text-slate-600">
                   {activeIndex === index ? "-" : "+"}
                 </span>
               </button>

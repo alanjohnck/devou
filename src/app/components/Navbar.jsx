@@ -27,50 +27,50 @@ const Navbar = () => {
   }, []);
 
   const navClasses = scrolled
-    ? "fixed w-full bg-indigo-900/80 backdrop-blur-md shadow-lg transition-all duration-300 z-50"
-    : "fixed w-full bg-indigo-900/80 transition-all duration-300 z-50";
+    ? "fixed w-full bg-black/90 backdrop-blur-md shadow-lg transition-all duration-300 z-50"
+    : "fixed w-full bg-black/90 transition-all duration-300 z-50";
 
   return (
     <nav className={navClasses}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <img src="./dlogo.png" className="w-22 h-14 scale-170" alt="Logo" />
+          <div className="flex items-center w-20 h-20">
+            <img src="./devounew.png" className="w-20 h-full" alt="Logo" />
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#about"
-              className="text-white hover:text-teal-300 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
               About
             </a>
             <a
               href="#services"
-              className="text-white hover:text-teal-300 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
               Services
             </a>
             <a
               href="#career"
-              className="text-white hover:text-teal-300 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
               Career{" "}
-              <span className="bg-teal-500 text-white text-xs px-2 py-1 rounded-full ml-2">
+              <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded-full ml-2">
                 {openPositions} 
               </span>
             </a>
             <a
               href="#faq"
-              className="text-white hover:text-teal-300 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
               FAQ
             </a>
             <a
               href="#contact"
-              className="text-white hover:text-teal-300 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
               Contact
             </a>
@@ -93,38 +93,38 @@ const Navbar = () => {
             <div className="flex flex-col space-y-3">
               <a
                 href="#about"
-                className="text-white py-2 hover:text-teal-300 transition-colors"
+                className="text-white py-2 hover:text-gray-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About
               </a>
               <a
                 href="#services"
-                className="text-white py-2 hover:text-teal-300 transition-colors"
+                className="text-white py-2 hover:text-gray-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </a>
               <a
                 href="#career"
-                className="text-white py-2 hover:text-teal-300 transition-colors"
+                className="text-white py-2 hover:text-gray-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Career{" "}
-                <span className="bg-teal-500 text-white text-xs px-2 py-1 rounded-full ml-2">
+                <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded-full ml-2">
                   {openPositions} Open
                 </span>
               </a>
               <a
                 href="#faq"
-                className="text-white py-2 hover:text-teal-300 transition-colors"
+                className="text-white py-2 hover:text-gray-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 FAQ
               </a>
               <a
                 href="#contact"
-                className="text-white py-2 hover:text-teal-300 transition-colors"
+                className="text-white py-2 hover:text-gray-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
